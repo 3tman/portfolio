@@ -1049,7 +1049,7 @@
         // ========== DARK MODE TOGGLE ==========
         const toggle = document.getElementById('darkModeToggle');
         const html = document.documentElement;
-        if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+        if (localStorage.getItem('theme') !== 'light') html.classList.add('dark');
         toggle.addEventListener('click', () => {
             html.classList.toggle('dark');
             localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
