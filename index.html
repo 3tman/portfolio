@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karbachi Outmane</title>
+    <meta name="description"
+        content="Portfolio of Atilla Pramudya Nugroho - Telecommunications Engineer specializing in Fiber Optic, IoT, and Network Infrastructure.">
+    <link rel="canonical" href="">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230ea5e9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'></circle><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'></path></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0ea5e9',
+                        'primary-dark': '#22d3ee',
+                        accent: '#f59e0b',
+                        'accent-dark': '#fbbf24',
+                        obsidian: '#0a0a0f',
+                        'off-white': '#f8fafc',
+                        'silver-gray': '#94a3b8',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Utility Classes */
+        .about-section {
+            padding: 100px 5%;
+            background-color: transparent;
+            /* Seamless with site bg */
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            /* Image takes less space than text */
+            gap: 60px;
+            align-items: center;
+            background: transparent;
+            /* Matches your blue cards exactly */
+            padding: 50px;
+            border-radius: 30px;
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Image Styling */
+        .about-image .image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+            filter: grayscale(20%);
+            /* Modern muted look */
+            transition: 0.4s;
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Text & Headings */
+        .about-content .subtitle {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .about-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+
+        .about-content .underline {
+            width: 50px;
+            height: 4px;
+            background: #38bdf8;
+            margin-bottom: 30px;
+        }
+
+        .about-content .description {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Interests - Same style as your Stack Tags */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .interest-grid span {
+            background: #0f172a;
+            /* Darker navy for pills */
+            color: #f1f5f9;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            border: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === REFINED GLASS SYSTEM === */
+        .glass-card,
+        .bento-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* LIGHT MODE SPECIFIC (Crisp & Clean) */
+        :root:not(.dark) .glass-card,
+        :root:not(.dark) .bento-glass {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.02),
+                0 10px 15px -3px rgba(0, 0, 0, 0.04);
+        }
+
+        /* DARK MODE SPECIFIC (Glowing & Deep) */
+        .dark .glass-card,
+        .dark .bento-glass {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        /* HOVER STATES (Adaptive) */
+        :root:not(.dark) .glass-card:hover,
+        :root:not(.dark) .bento-glass:hover {
+            border-color: var(--color-primary);
+            box-shadow:
+                0 20px 25px -5px rgba(0, 0, 0, 0.05),
+                0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            transform: translateY(-4px);
+        }
+
+        .dark .glass-card:hover,
+        .dark .bento-glass:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px -5px rgba(14, 165, 233, 0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Glow Effects */
+        .glow-badge {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        :root:not(.dark) .glow-badge {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .glow-badge:hover {
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.2s;
+            z-index: 50;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        /* Terminal Cursor */
+        .terminal-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Dark Mode Toggle */
+        .toggle-track {
+            width: 56px;
+            height: 28px;
+            background: #e2e8f0;
+            border-radius: 9999px;
+            position: relative;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .dark .toggle-track {
+            background: #1e293b;
+        }
+
+        .toggle-thumb {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 9999px;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .toggle-thumb {
+            transform: translateX(28px);
+            background: #0ea5e9;
+        }
+
+        /* Mesh Background */
+        .mesh-bg {
+            background: radial-gradient(ellipse at 20% 0%, rgba(14, 165, 233, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+
+        /* Blueprint Grid */
+        .blueprint-grid {
+            background-image: linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Spectrum Signal Animations */
+        @keyframes ping-slow {
+
+            75%,
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .animate-ping-slow {
+            animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .animate-ping-slower {
+            animation: ping-slow 5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        .delay-700 {
+            animation-delay: 700ms;
+        }
+
+        /* Hide Scrollbar */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-slate-50 dark:bg-obsidian text-slate-900 dark:text-off-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 inset-x-0 z-50 glass-card bg-white/80 dark:bg-obsidian/80">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg transition-transform duration-300 group-hover:scale-105">
+                    #</div>
+                <div class="hidden sm:block">
+                    <p class="logo">MY PORTFOLIO</p>
+                </div>
+            </a>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="#home"
+                        class="nav-link hover:text-primary transition-all duration-300 hover:scale-105 active:scale-95">Home</a>
+                    <a href="#about"
+                        class="nav-link hover:text-primary transition-all duration-300 hover:scale-105 active:scale-95">About</a>
+                    <a href="#education"
+                        class="nav-link hover:text-primary transition-all duration-300 hover:scale-105 active:scale-95">Education</a>
+                    <a href="#projects"
+                        class="nav-link hover:text-primary transition-all duration-300 hover:scale-105 active:scale-95">Projects</a>
+                    <a href="#certificates"
+                        class="nav-link hover:text-primary transition-all duration-300 hover:scale-105 active:scale-95">Certificates</a>
+                    <a href="#footer"
+                        class="nav-link hover:text-primary transition-all duration-300 hover:scale-105 active:scale-95">Links</a>
+                </div>
+                <div class="toggle-track" id="darkModeToggle" role="button" aria-label="Toggle dark mode">
+                    <div class="toggle-thumb">
+                        <span class="material-symbols-outlined text-sm text-amber-500 dark:text-white">light_mode</span>
+                    </div>
+                </div>
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+                    <span class="w-6 h-0.5 bg-current transition-all duration-300"></span>
+                    <span class="w-6 h-0.5 bg-current transition-all duration-300"></span>
+                    <span class="w-4 h-0.5 bg-current transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Sheet Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-x-0 bottom-0 z-50 bg-obsidian/95 backdrop-blur-xl rounded-t-3xl p-6 pt-4 transition-transform duration-300 transform translate-y-full md:hidden">
+        <!-- Drag Handle -->
+        <div class="flex justify-center mb-6">
+            <div class="w-12 h-1.5 bg-white/20 rounded-full"></div>
+        </div>
+        <nav class="flex flex-col gap-4 text-center">
+            <a href="#education"
+                class="mobile-nav-link text-lg font-semibold py-3 hover:text-primary transition-colors">Education</a>
+            <a href="#projects"
+                class="mobile-nav-link text-lg font-semibold py-3 hover:text-primary transition-colors">Projects</a>
+            <a href="#home"
+                class="mobile-nav-link text-lg font-semibold py-3 hover:text-primary transition-colors">home</a>
+            <a href="#contact"
+                class="mobile-nav-link text-lg font-semibold py-3 hover:text-primary transition-colors">Contact</a>
+        </nav>
+    </div>
+    <!-- Bottom Sheet Overlay -->
+    <div id="mobileMenuOverlay"
+        class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden mesh-bg">
+        <div
+            class="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div class="reveal-hidden">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary dark:bg-primary-dark/20 dark:text-primary-dark mb-6">Available
+                    for Opportunities</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+                    Building the<br><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Future of
+                        Connectivity</span>
+                </h1>
+                <p class="text-lg text-silver-gray mb-4">Hi, I'm <strong class="text-slate-900 dark:text-off-white">
+                        Karbachi Outmane </strong></p>
+                <p class="text-xl font-mono text-primary dark:text-primary-dark mb-8"><span id="typewriter"></span><span
+                        class="terminal-cursor"></span></p>
+
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-105 active:scale-95 min-h-[44px]">
+                        <span class="material-symbols-outlined">mail</span> Get in Touch
+                    </a>
+                    <a href="./assets/documents/CV_OUTMANE.pdf" target="_blank"
+                        class="inline-flex items-center justify-center gap-2 border-2 border-slate-300 dark:border-white/20 hover:border-primary dark:hover:border-primary-dark px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-105 active:scale-95 min-h-[44px]">
+                        <span class="material-symbols-outlined">description</span> Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="reveal-hidden hidden lg:flex justify-center">
+                <div class="relative" id="hero-image-container">
+                    <!-- Spectrum Signal Waves -->
+                    <div class="absolute inset-0 z-[-1]">
+                        <div class="absolute -inset-8 bg-primary/20 rounded-full animate-ping-slow"></div>
+                        <div class="absolute -inset-8 bg-accent/20 rounded-full animate-ping-slower delay-300"></div>
+                        <div class="absolute -inset-8 bg-primary/10 rounded-full animate-pulse-slow delay-700"></div>
+                    </div>
+                    <img src="./assets/images/profile_pic.jpeg" alt="Atilla Pramudya"
+                        class="relative w-80 h-80 object-cover rounded-full border-4 border-white/20 shadow-2xl bg-slate-200 dark:bg-slate-800"
+                        loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="image-wrapper">
+                    <img src="./assets/images/profile_pic.jpeg" alt="Otmane Profile">
+                    <div class="image-accent"></div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <p class="subtitle">WHO I AM</p>
+                <h2>About Me</h2>
+                <div class="underline"></div>
+
+                <p class="description">
+                    I am a first-year student specializing in <strong>Telecommunications and Network Engineering
+                        (GTR)</strong>.
+                    My academic journey is driven by a deep fascination with how data moves across the globe securely
+                    and efficiently.
+                </p>
+                <p class="description">
+                    I actively engage in hands-on lab projects, from configuring intrusion detection systems to
+                    exploring signal processing algorithms.
+                    I am currently seeking opportunities, such as my upcoming internship in Madrid, to apply my academic
+                    foundation to real-world communication systems.
+                </p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education History (Bento Grid) -->
+    <section class="py-24 relative overflow-hidden" id="education">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-16 reveal-hidden">
+                <h2 class="text-4xl font-extrabold mb-4">Education History</h2>
+                <p class="text-silver-gray max-w-xl mx-auto">Focused on modern communication systems and network
+                    infrastructure
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="bento-glass rounded-3xl p-8 reveal-hidden transition-all duration-300 hover:scale-[1.02]">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white font-bold text-xl">
+                            TU</div>
+                        <div>
+                            <h3 class="text-xl font-bold">National School of Applied Sciences SAFI</h3>
+                            <p class="text-primary dark:text-primary-dark font-semibold">Integrated Preparatory Program
+                                in Engineering</p>
+                            <p class="text-sm text-silver-gray">2023 - 2025</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-silver-gray">
+                        <li class="flex items-start gap-2"><span class="text-primary">▸</span> Completed a rigorous
+                            two-year preparatory cycle with a heavy emphasis on advanced mathematics, classical and
+                            fluid mechanics, and electromagnetism</li>
+                        <li class="flex items-start gap-2"><span class="text-primary">▸</span> Active in Community
+                            Service (developed photodiode-based blood type detection for special needs schools).</li>
+                        <li class="flex items-start gap-2"><span class="text-primary">▸</span> combining advanced
+                            theoretical foundations in Mathematics and Physics with practical expertise in C programming
+                            and professional methodology."</li>
+                    </ul>
+                </div>
+                <!-- SMK -->
+                <div class="bento-glass rounded-3xl p-8 reveal-hidden transition-all duration-300 hover:scale-[1.02]"
+                    style="transition-delay: 100ms;">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white font-bold text-xl">
+                            SMK</div>
+                        <div>
+                            <h3 class="text-xl font-bold">National School of Applied Sciences SAFI</h3>
+                            <p class="text-emerald-500 font-semibold">Engineering Degree in Networks and
+                                Telecommunications</p>
+                            <p class="text-sm text-silver-gray">2025 - now</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-left">
+                        <div class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm mt-0.5">check_circle</span>
+                            <p class="text-sm text-slate-600 dark:text-silver-gray">Active student in vocational
+                                academic activities.</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm mt-0.5">terminal</span>
+                            <p class="text-sm text-slate-600 dark:text-silver-gray">Mastered <span
+                                    class="font-bold text-slate-800 dark:text-white">Debian Linux</span> (Installation,
+                                Config, Troubleshooting).</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm mt-0.5">hub</span>
+                            <p class="text-sm text-slate-600 dark:text-silver-gray leading-relaxed">Network Fundamentals
+                                (Subnetting, Routing, Switching) via
+                                <span
+                                    class="font-mono text-xs text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">GNS3</span>
+                                &
+                                <span
+                                    class="font-mono text-xs text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">cisco
+                                    Packet Tracer</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Holographic Deck -->
+    <section class="py-24 relative overflow-hidden" id="skills">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-16 reveal-hidden">
+                <span class="text-primary font-mono text-sm tracking-widest uppercase">Technical Arsenal</span>
+                <h2 class="text-4xl font-extrabold mt-2 mb-4 text-slate-900 dark:text-off-white">Capabilities & Stack
+                </h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+                <!-- Engineering Core -->
+                <div
+                    class="group relative bg-white dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-white/10 p-8 rounded-3xl overflow-hidden hover:border-primary/50 transition-all duration-500 reveal-hidden hover:shadow-[0_0_30px_-5px_rgba(14,165,233,0.3)]">
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-3 rounded-xl bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined text-3xl">settings_ethernet</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Engineering Core</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-primary/30 group-hover:text-primary transition-colors">Network
+                                Configuration</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-primary/30 group-hover:text-primary transition-colors">Routing
+                                & Swiching</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-primary/30 group-hover:text-primary transition-colors">Network
+                                Admin</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-primary/30 group-hover:text-primary transition-colors">TCP/IP</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-primary/30 group-hover:text-primary transition-colors">Troubleshooting</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-primary/30 group-hover:text-primary transition-colors">VLANs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Stack -->
+                <div
+                    class="group relative bg-white dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-white/10 p-8 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 reveal-hidden delay-100 hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)]">
+                    <div
+                        class="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-3 rounded-xl bg-purple-500/10 text-purple-500">
+                                <span class="material-symbols-outlined text-3xl">terminal</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Stack</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-purple-500/30 group-hover:text-purple-500 transition-colors">Cisco
+                                Packet Tracer</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-purple-500/30 group-hover:text-purple-500 transition-colors">Winbox</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-purple-500/30 group-hover:text-purple-500 transition-colors">GNS3</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-purple-500/30 group-hover:text-purple-500 transition-colors">AWS</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-purple-500/30 group-hover:text-purple-500 transition-colors">Windows
+                                server</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-purple-500/30 group-hover:text-purple-500 transition-colors">Linux</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-purple-500/30 group-hover:text-purple-500 transition-colors">Vmware
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Attributes -->
+                <div
+                    class="group relative bg-white dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-white/10 p-8 rounded-3xl overflow-hidden hover:border-emerald-500/50 transition-all duration-500 reveal-hidden delay-200 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.3)]">
+                    <div
+                        class="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-500">
+                                <span class="material-symbols-outlined text-3xl">psychology</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Professional Attributes</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-emerald-500/30 group-hover:text-emerald-500 transition-colors">Problem-solving
+                                mindset</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-emerald-500/30 group-hover:text-emerald-500 transition-colors">Leadership</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-emerald-500/30 group-hover:text-emerald-500 transition-colors">Teamwork</span>
+                            <span
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:border-emerald-500/30 group-hover:text-emerald-500 transition-colors">Time
+                                Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication -->
+                <div
+                    class="group relative bg-white dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-white/10 p-8 rounded-3xl overflow-hidden hover:border-amber-500/50 transition-all duration-500 reveal-hidden delay-300 hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]">
+                    <div
+                        class="absolute inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-3 rounded-xl bg-amber-500/10 text-amber-500">
+                                <span class="material-symbols-outlined text-3xl">translate</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Communication</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-slate-600 dark:text-silver-gray">Arabic</span>
+                                <span
+                                    class="text-xs font-bold text-amber-500 bg-amber-500/10 px-2 py-1 rounded">Native</span>
+                            </div>
+                            <div class="h-1.5 w-full bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-amber-500 w-full"></div>
+                            </div>
+
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-sm font-medium text-slate-600 dark:text-silver-gray">french</span>
+                                <span
+                                    class="text-xs font-bold text-amber-500 bg-amber-500/10 px-2 py-1 rounded">fluent</span>
+                            </div>
+                            <div class="h-1.5 w-full bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-amber-500 w-[80%]"></div>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-sm font-medium text-slate-600 dark:text-silver-gray">English</span>
+                                <span
+                                    class="text-xs font-bold text-amber-500 bg-amber-500/10 px-2 py-1 rounded">fluent</span>
+                            </div>
+                            <div class="h-1.5 w-full bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-amber-500 w-[80%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Projects -->
+    <section class="py-24 bg-white dark:bg-white/5 relative overflow-hidden" id="projects">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-16 reveal-hidden">
+                <h2 class="text-4xl font-extrabold mb-4">Projects I've done</h2>
+                <p class="text-silver-gray max-w-xl mx-auto">Practical implementation of networking and Cybersecurity
+                    concepts.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- SAVIA -->
+                <div
+                    class="glass-card rounded-3xl overflow-hidden reveal-hidden transition-all duration-300 hover:scale-[1.02]">
+                    <div class="relative h-64 bg-slate-200 dark:bg-slate-800">
+                        <img src="./assets/images/projects/packet_tracer.jpg" alt="SAVIA System"
+                            class="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+                            onload="this.classList.remove('opacity-0')" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+
+                            <h3 class="text-2xl font-bold text-white">Multi-Site Enterprise Network Infrastructure with
+                                GRE VPN & Inter-VLAN Routing</h3>
+                            <p class="text-sm text-white/80">Connecting two geographical sites through a secure GRE
+                                tunnel and scalable VLAN-segmented architecture to ensure seamless enterprise-grade
+                                communication.</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-silver-gray mb-4">This project demonstrates the design and implementation
+                            of a scalable,<strong class="text-emerald-500">secure enterprise network</strong> connecting
+                            two distinct geographical locations (Site A and Site B) via a simulated ISP cloud. It
+                            showcases proficiency in core networking concepts, including site-to-site connectivity,
+                            traffic isolation, and edge security.<span class="tooltip"
+                                data-tip="Internet of Things - Connected devices"></span></p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#CiscoPacketTracer</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#NetworkEngineering</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#RoutingAndSwitching</span>
+                        </div>
+                        <button onclick="openModal('savia')"
+                            class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 active:scale-95">View
+                            Project Details</button>
+                    </div>
+                </div>
+                <!-- Harmony-IoT -->
+                <div class="glass-card rounded-3xl overflow-hidden reveal-hidden transition-all duration-300 hover:scale-[1.02]"
+                    style="transition-delay: 100ms;">
+                    <div class="relative h-64 bg-slate-200 dark:bg-slate-800">
+                        <img src="./assets/images/projects/dashboard.png" alt="Harmony-IoT"
+                            class="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+                            onload="this.classList.remove('opacity-0')" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+
+                            <h3 class="text-2xl font-bold text-white">Cybersecurity Home Lab: SIEM Implementation &
+                                Advanced Threat Detection</h3>
+                            <p class="text-sm text-white/80">environment to simulate, monitor, and mitigate real-world
+                                cyberattacks. By integrating industry-standard tool.</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-silver-gray mb-4">This project involved the design and deployment of a
+                            comprehensive <strong class="text-accent">Security Operations Center
+                                (SOC)</strong>environment to simulate, monitor, and mitigate real-world cyberattacks. By
+                            integrating industry-standard tools, I established a robust pipeline for real-time threat
+                            intelligence and automated alerting.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#SIEM</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#SOCAnalyst</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#Wazuh</span>
+                        </div>
+                        <button onclick="openModal('harmony')"
+                            class="w-full bg-accent hover:bg-accent/90 text-white py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 active:scale-95">View
+                            Project Details</button>
+                    </div>
+                </div>
+                <div class="glass-card rounded-3xl overflow-hidden reveal-hidden transition-all duration-300 hover:scale-[1.02]"
+                    style="transition-delay: 100ms;">
+                    <div class="relative h-64 bg-slate-200 dark:bg-slate-800">
+                        <img src="./assets/images/projects/honey.webp" alt="Harmony-IoT"
+                            class="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+                            onload="this.classList.remove('opacity-0')" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+
+                            <h3 class="text-2xl font-bold text-white">Cloud Security & Threat Intelligence: AWS Honeypot Deployment with ELK Stack</h3>
+                            <p class="text-sm text-white/80">Cloud-Based Honeypot Deployment on AWS: Capturing, Analyzing, and Visualizing Cyberattacks Using the ELK Stack</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-silver-gray mb-4">Deployed a Cowrie and OpenCanary honeypot infrastructure on AWS, isolated via a Bastion Host configuration. Built a real-time ELK Stack SIEM pipeline to ingest, geolocate, and analyze hundreds of thousands of automated attacks. Extracted threat intelligence by mapping attacker behaviors to the MITRE ATT&CK framework and integrating VirusTotal API lookups.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#CloudSecurity</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#AWS</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-white/10 rounded-full">#ELKStack</span>
+                        </div>
+                        <button onclick="openModal('carmony')"
+                            class="w-full bg-accent hover:bg-accent/90 text-white py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 active:scale-95">View
+                            Project Details</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Professional Certificates -->
+    <section class="py-24 relative overflow-hidden" id="certificates">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-16 reveal-hidden">
+                <h2 class="text-4xl font-extrabold mb-4">Professional Certificates</h2>
+                <p class="text-silver-gray max-w-xl mx-auto">Industry-recognized credentials</p>
+            </div>
+            <div class="flex md:grid md:grid-cols-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-4 pb-4 md:pb-0 scrollbar-hide"
+                id="certificatesContainer">
+                <div
+                    class="glow-badge rounded-2xl p-6 text-center reveal-hidden transition-all duration-300 hover:scale-105 snap-center shrink-0 w-[200px] md:w-auto">
+                    <span class="material-symbols-outlined text-4xl text-emerald-500 mb-3">verified</span>
+                    <p class="font-bold text-sm">Google Cybersecurity Pro certificate</p>
+                </div>
+                <div
+                    class="glow-badge rounded-2xl p-6 text-center reveal-hidden transition-all duration-300 hover:scale-105 snap-center shrink-0 w-[200px] md:w-auto">
+                    <span class="material-symbols-outlined text-4xl text-blue-500 mb-3">verified</span>
+                    <p class="font-bold text-sm">Cisco Intro to networks</p>
+                </div>
+                <div
+                    class="glow-badge rounded-2xl p-6 text-center reveal-hidden transition-all duration-300 hover:scale-105 snap-center shrink-0 w-[200px] md:w-auto">
+                    <span class="material-symbols-outlined text-4xl text-red-500 mb-3">verified</span>
+                    <p class="font-bold text-sm">Cisco introduction to Cybersecurity</p>
+                </div>
+                
+                <div
+                    class="glow-badge rounded-2xl p-6 text-center reveal-hidden transition-all duration-300 hover:scale-105 snap-center shrink-0 w-[200px] md:w-auto">
+                    <span class="material-symbols-outlined text-4xl text-cyan-500 mb-3">verified</span>
+                    <p class="font-bold text-sm">Python Essentials</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Contact -->
+    <section class="py-32 relative overflow-hidden" id="contact">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen">
+            </div>
+            <div class="absolute top-20 right-20 w-72 h-72 bg-accent/10 rounded-full blur-[80px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal-hidden">
+                <span
+                    class="text-sm font-bold text-primary dark:text-accent-dark uppercase tracking-[0.3em] mb-2 block">Collaboration</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-off-white mb-6">Initialize
+                    Connection</h2>
+                <p class="text-slate-500 dark:text-silver-gray max-w-xl mx-auto text-lg">
+                    Let's Build Something Resilient
+                </p>
+            </div>
+
+            <div class="glass-card p-1 rounded-3xl reveal-hidden">
+                <div
+                    class="bg-white/80 dark:bg-obsidian/60 backdrop-blur-2xl rounded-[1.4rem] p-8 md:p-12 border border-slate-200 dark:border-white/5 shadow-2xl relative overflow-hidden">
+
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50">
+                    </div>
+
+                    <form id="contactForm" action="https://formspree.io/f/mlgweprl" method="POST" class="space-y-8">
+
+                        <!-- Name Field -->
+                        <div class="relative group">
+                            <input type="text" id="nameInput" name="name"
+                                class="peer w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-1 text-slate-900 dark:text-off-white focus:outline-none focus:border-primary dark:focus:border-primary transition-all duration-300 placeholder-transparent"
+                                placeholder="Name" required />
+                            <label for="nameInput"
+                                class="absolute left-1 -top-3.5 text-xs text-primary dark:text-primary-dark transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-primary dark:peer-focus:text-primary-dark cursor-text">
+                                Authorized Name
+                            </label>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="relative group">
+                            <input type="email" id="emailInput" name="email"
+                                class="peer w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-1 text-slate-900 dark:text-off-white focus:outline-none focus:border-primary dark:focus:border-primary transition-all duration-300 placeholder-transparent"
+                                placeholder="Email" required />
+                            <label for="emailInput"
+                                class="absolute left-1 -top-3.5 text-xs text-primary dark:text-primary-dark transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-primary dark:peer-focus:text-primary-dark cursor-text">
+                                Email Address
+                            </label>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="relative group">
+                            <textarea id="messageInput" name="message" rows="4"
+                                class="peer w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-1 text-slate-900 dark:text-off-white focus:outline-none focus:border-primary dark:focus:border-primary transition-all duration-300 placeholder-transparent resize-none"
+                                placeholder="Message" required></textarea>
+                            <label for="messageInput"
+                                class="absolute left-1 -top-3.5 text-xs text-primary dark:text-primary-dark transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-primary dark:peer-focus:text-primary-dark cursor-text">
+                                Transmission Data (Message)
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submitBtn"
+                            class="group relative w-full bg-slate-900 dark:bg-white text-white dark:text-obsidian py-4 rounded-xl font-black uppercase tracking-widest overflow-hidden hover:shadow-[0_0_40px_-10px_rgba(14,165,233,0.5)] transition-all duration-500">
+                            <div
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                            </div>
+                            <span class="relative flex items-center justify-center gap-3">
+                                <span id="submitText">Transmit Message</span>
+                                <span
+                                    class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-2"
+                                    id="submitIcon">send</span>
+                            </span>
+                        </button>
+
+                        <p id="formStatus" class="text-center text-sm font-mono hidden"></p>
+                    </form>
+                    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-16 bg-obsidian text-silver-gray relative overflow-hidden blueprint-grid">
+        <div class="absolute inset-0 mesh-bg opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <p class="font-bold text-off-white mb-4">Karbachi Outmane</p>
+                    <p class="text-sm">Building robust digital foundations through advanced telecommunications.</p>
+                </div>
+                <div>
+                    <p class="font-bold text-off-white mb-4">Social Links</p>
+                    <div class="space-y-2 text-sm"><a
+                            href="https://www.linkedin.com/in/outmane-karbachi-559a38387?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-2 hover:text-primary-dark transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a></div>
+                </div>
+                <div>
+                    <p class="font-bold text-off-white mb-4">Terminal</p>
+                    <div class="font-mono text-sm text-primary-dark" id="terminalText"></div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-xs">&copy; 2026 karbachi outmane. All
+                rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="projectModal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300" role="dialog"
+        aria-modal="true">
+        <div class="fixed inset-0 bg-obsidian/90 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto flex items-center justify-center p-4">
+            <div
+                class="relative bg-white dark:bg-obsidian rounded-2xl w-full max-w-4xl transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-white/10 shadow-2xl">
+                <button onclick="closeModal()"
+                    class="absolute top-4 right-4 z-20 p-2 rounded-full bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-all"><span
+                        class="material-symbols-outlined">close</span></button>
+                <div class="grid md:grid-cols-2">
+                    <div class="bg-slate-100 dark:bg-white/5 p-8 flex flex-col items-center justify-center">
+                        <img id="modalImage" src="" alt="Project" class="rounded-xl w-full h-64 object-cover mb-4">
+                        <div class="flex gap-2"><button onclick="prevSlide()"
+                                class="p-2 rounded-full bg-white/10 hover:bg-white/20"><span
+                                    class="material-symbols-outlined">chevron_left</span></button><button
+                                onclick="nextSlide()" class="p-2 rounded-full bg-white/10 hover:bg-white/20"><span
+                                    class="material-symbols-outlined">chevron_right</span></button></div>
+                    </div>
+                    <div class="p-8">
+                        <span id="modalBadge"
+                            class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary mb-4">Badge</span>
+                        <h3 id="modalTitle" class="text-2xl font-bold mb-2">Title</h3>
+                        <p id="modalTagline" class="text-silver-gray mb-4">Tagline</p>
+                        <ul id="modalHighlights" class="space-y-2 text-sm text-silver-gray mb-6"></ul>
+                        <div class="flex gap-4">
+                            <a id="modalCertLink" href="#" target="."
+                                class="flex-1 bg-primary text-white py-3 rounded-xl font-bold text-center transition-all hover:scale-105">More
+                                details</a>
+
+                        </div>
+                        <iframe id="pdfViewer" src="" class="w-full h-64 rounded-xl mt-4 hidden"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========== CONSOLE MESSAGE ==========
+        console.log('%c👋 Hello! Taking a peek under the hood? I like your curiosity.', 'background: #0ea5e9; color: white; font-size: 14px; font-weight: bold; padding: 10px 20px; border-radius: 8px;');
+        console.log('%c📩 Hire me: karbachioutmane@gmail.com', 'color: #22d3ee; font-size: 12px;');
+
+        // ========== DARK MODE TOGGLE ==========
+        const toggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+        toggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // ========== TYPEWRITER ==========
+        const roles = ["Engineering Student", "Cybersecurity and Cloud Enthousiast", "Probelm Solver"];
+        let roleIdx = 0, charIdx = 0, isDeleting = false;
+        function typeWriter() {
+            const el = document.getElementById('typewriter');
+            if (!el) return;
+            const role = roles[roleIdx];
+            el.textContent = role.substring(0, isDeleting ? --charIdx : ++charIdx);
+            let speed = isDeleting ? 50 : 100;
+            if (!isDeleting && charIdx === role.length) { isDeleting = true; speed = 2000; }
+            else if (isDeleting && charIdx === 0) { isDeleting = false; roleIdx = (roleIdx + 1) % roles.length; speed = 500; }
+            setTimeout(typeWriter, speed);
+        }
+        typeWriter();
+
+        // ========== EXPERIENCE CALCULATOR ==========
+        function calcExp() {
+            const start = new Date('2022-06-01');
+            const years = ((new Date() - start) / (1000 * 60 * 60 * 24 * 365)).toFixed(1);
+            const el = document.getElementById('exp-counter');
+            if (el) el.textContent = years + '+';
+        }
+        calcExp();
+
+        // ========== SCROLL REVEAL ==========
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('reveal-visible'), i * 50);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
+
+        // ========== ACTIVE NAV ==========
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle('text-primary', link.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        sections.forEach(sec => navObserver.observe(sec));
+
+        const nameInput = document.getElementById('nameInput');
+        const emailInput = document.getElementById('emailInput');
+        const messageInput = document.getElementById('messageInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function validateForm() {
+            const nameValid = nameInput.value.trim().length >= 2;
+            const emailValid = emailRegex.test(emailInput.value);
+            const messageValid = messageInput.value.trim().length >= 10;
+            const allValid = nameValid && emailValid && messageValid;
+
+            // Name validation feedback
+            nameInput.classList.toggle('border-red-500', nameInput.value.length > 0 && !nameValid);
+            nameInput.classList.toggle('border-emerald-500', nameValid);
+
+            // Email validation feedback
+            emailInput.classList.toggle('border-red-500', emailInput.value.length > 0 && !emailValid);
+            emailInput.classList.toggle('border-emerald-500', emailValid);
+
+            // Message validation feedback
+            messageInput.classList.toggle('border-red-500', messageInput.value.length > 0 && !messageValid);
+            messageInput.classList.toggle('border-emerald-500', messageValid);
+
+            // Submit button state
+            submitBtn.disabled = !allValid;
+            submitBtn.classList.toggle('opacity-50', !allValid);
+            submitBtn.classList.toggle('cursor-not-allowed', !allValid);
+        }
+
+        nameInput.addEventListener('input', validateForm);
+        emailInput.addEventListener('input', validateForm);
+        messageInput.addEventListener('input', validateForm);
+        const form = document.getElementById('contactForm');
+        const submitText = document.getElementById('submitText');
+        const submitIcon = document.getElementById('submitIcon');
+        const formStatus = document.getElementById('formStatus');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            // Loading state
+            submitText.textContent = 'Sending...';
+            submitIcon.textContent = 'hourglass_empty';
+            submitBtn.disabled = true;
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    formStatus.textContent = '✅ Thanks! Message received.';
+                    formStatus.classList.remove('hidden', 'text-red-500');
+                    formStatus.classList.add('text-emerald-500');
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (error) {
+                formStatus.textContent = '❌ Oops! There was a problem.';
+                formStatus.classList.remove('hidden', 'text-emerald-500');
+                formStatus.classList.add('text-red-500');
+            } finally {
+                submitText.textContent = 'Send Message';
+                submitIcon.textContent = 'send';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // ========== TERMINAL TYPING ==========
+        const terminalLines = ['> initializing_handshake...', '> protocols: optimized;', '> CONNECTED_READY.', '"Engineering is the art of organizing design and technology to solve human problems."'];
+        let lineIdx = 0, termCharIdx = 0;
+        function terminalType() {
+            const el = document.getElementById('terminalText');
+            if (!el || lineIdx >= terminalLines.length) return;
+            el.innerHTML += terminalLines[lineIdx][termCharIdx++];
+            if (termCharIdx >= terminalLines[lineIdx].length) { el.innerHTML += '<br>'; lineIdx++; termCharIdx = 0; }
+            setTimeout(terminalType, lineIdx === terminalLines.length - 1 ? 30 : 50);
+        }
+        setTimeout(terminalType, 1000);
+
+        // ========== MODAL ==========
+        const projectData = {
+            savia: { title: 'Multi-Site Enterprise Network Infrastructure with GRE VPN & Inter-VLAN Routing', tagline: '', badge: 'first project', images: ['./assets/images/projects/packet_tracer.jpg'], certLink: './assets/documents/projet_packet_tracer.pkt', highlights: ['Gateway Redundancy: Implemented HSRP to ensure 99.9% network uptime and eliminate single points of failure.', 'Dynamic Routing: Orchestrated seamless inter-site connectivity using OSPF for automated path discovery.', 'Automated Addressing: Configured a centralized DHCP Server for efficient, error-free IP management across all VLANs.', 'Edge Security & NAT: Defined granular Access Control Lists (ACLs) to regulate traffic flow and permit secure translation for internet access'] },
+            harmony: { title: 'Cybersecurity Home Lab: SIEM Implementation & Advanced Threat Detection', tagline: '', badge: 'second project', images: ['./assets/images/projects/dashboard.png'], certLink: './assets/documents/lab.pdf', highlights: ['Integrated SIEM/EDR Architecture: Deployed a Wazuh 4.14.3 server to manage and monitor multiple Ubuntu 24.04 endpoints, facilitating centralized log collection and endpoint security.', 'Intrusion Detection System (IDS): Implemented Suricata v7.0.3 with custom rules to identify network-level anomalies, specifically targeting high-volume flood attacks', 'Attack Simulation & Response: * SSH Brute Force: Simulated a large-scale brute force attack using Hydra, successfully capturing over 3,700 authentication failures within the SIEM'] },
+            carmony: { title: 'Cloud Security & Threat Intelligence: AWS Honeypot Deployment with ELK Stack', tagline: 'Cybersecurity & Deception', badge: 'third project', images: ['./assets/images/projects/honey.webp'], certLink: './assets/documents/Rapport_Honeypot.pdf', highlights: ['Secure AWS Architecture: Built a segregated cloud network utilizing a public subnet for the honeypot traps and an isolated private subnet for data processing, nted Suricata v7.0.3 with custom rules to identify network-level anomalies, specifically targeting high-volume flood attacks', 'Real-Time SIEM Pipeline: Engineered an end-to-end ELK Stack (Filebeat, Logstash, Elasticsearch, Kibana) data pipeline to ingest, parse, and geolocate hundreds of thousands of live malicious events, Multi-Layered Deception: Deployed a medium-interaction Cowrie honeypot to capture interactive SSH/Telnet brute-force commands alongside an OpenCanary honeypot to detect wide-scale multi-service port scans.'] }
+        };
+        let currentProject = null, slideIdx = 0;
+        function openModal(id) {
+            currentProject = projectData[id]; slideIdx = 0;
+            if (!currentProject) return;
+            document.getElementById('modalTitle').textContent = currentProject.title;
+            document.getElementById('modalTagline').textContent = currentProject.tagline;
+            document.getElementById('modalBadge').textContent = currentProject.badge;
+            document.getElementById('modalImage').src = currentProject.images[0];
+            document.getElementById('modalHighlights').innerHTML = currentProject.highlights.map(h => `<li>▸ ${h}</li>`).join('');
+            document.getElementById('modalCertLink').href = currentProject.certLink;
+            document.getElementById('pdfViewer').classList.add('hidden');
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.remove('opacity-0'); modal.querySelector('div[class*="transform"]').classList.remove('scale-95'); }, 10);
+        }
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div[class*="transform"]').classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+        function nextSlide() { if (currentProject && currentProject.images.length > 1) { slideIdx = (slideIdx + 1) % currentProject.images.length; document.getElementById('modalImage').src = currentProject.images[slideIdx]; } }
+        function prevSlide() { if (currentProject && currentProject.images.length > 1) { slideIdx = (slideIdx - 1 + currentProject.images.length) % currentProject.images.length; document.getElementById('modalImage').src = currentProject.images[slideIdx]; } }
+        function showPdf() { document.getElementById('pdfViewer').src = currentProject.certLink; document.getElementById('pdfViewer').classList.toggle('hidden'); }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ========== MOBILE BOTTOM SHEET MENU ==========
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('translate-y-full');
+            mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuOverlay.classList.add('opacity-100');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-y-full');
+            mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuOverlay.classList.remove('opacity-100');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        mobileMenuBtn?.addEventListener('click', openMobileMenu);
+        mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
+        mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        // ========== SWIPE GESTURES FOR MODAL ==========
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const modalImage = document.getElementById('modalImage');
+
+        modalImage?.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modalImage?.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeDistance = touchEndX - touchStartX;
+            if (swipeDistance > 50) {
+                prevSlide(); // Swipe right = prev
+            } else if (swipeDistance < -50) {
+                nextSlide(); // Swipe left = next
+            }
+        }
+
+        // ========== HAPTIC FEEDBACK ==========
+        function triggerHaptic() {
+            if ('vibrate' in navigator) {
+                navigator.vibrate(5); // Very subtle 5ms vibration
+            }
+        }
+
+        document.querySelectorAll('button, a, .nav-link, .mobile-nav-link').forEach(el => {
+            el.addEventListener('click', triggerHaptic);
+        });
+
+        (function () {
+            // 1. Public Key 
+            emailjs.init("mPN3CVodwSrC12rFB");
+        })();
+
+        const contactForm = document.getElementById('contactForm');
+        const btn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('submitText');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            btnText.innerText = "TRANSMITTING...";
+            btn.style.opacity = "0.7";
+
+            // 2. Service and Template IDs here
+            emailjs.sendForm('service_z7a1zek', 'service_z7a1zek', this)
+                .then(() => {
+                    btnText.innerText = "TRANSMISSION COMPLETE";
+                    contactForm.reset();
+
+                    setTimeout(() => {
+                        btnText.innerText = "TRANSMIT MESSAGE";
+                        btn.style.opacity = "1";
+                    }, 4000);
+                }, (error) => {
+                    btnText.innerText = "TRANSMISSION FAILED";
+                    console.log('FAILED...', error);
+                });
+        });
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "outmane karbachi",
+  "title": "engineering student",
+  "tagline": "I Turn Ideas Into Intelligent, Connected Systems",
+  "roles": ["Engineering student", "Cybersecurity enthousiast", "Problem Solver"],
+  "avatar": "./assets/images/profile.jpg",
+  "about": {
+    "summary": "I'm Karbachi Outmane, a Telecommunication Engineering student who doesn't just study networks—I build systems that solve real problems.",
+    "description": "My IoT projects have secured Rp 50 million in CSR funding and reached the Top 50 of Innovillage competition. From splicing fiber optics at PLN Icon Plus to developing water monitoring systems for communities, I bridge the gap between hardware and software.",
+    "cta": "Currently seeking opportunities where I can apply my skills in IoT development, network engineering, and embedded systems to build impactful solutions."
+  },
+  "stats": [
+    { "value": "50M+", "label": "Funding Secured" },
+    { "value": "Top 50", "label": "Innovillage" },
+    { "value": "3+", "label": "Major Projects" }
+  ],
+  "social": {
+    "email": "karbachioutmane@example.com",
+    "whatsapp": "62XXXXXXXXXX",
+    "linkedin": "https://www.linkedin.com/in/outmane-karbachi-559a38387?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    "github": "https://github.com/your-username",
+    "instagram": ""
+  },
+  "cv": "./assets/documents/CV ATS.pdf"
+}
